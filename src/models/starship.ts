@@ -1,4 +1,4 @@
-export class Starship {
+export interface Starship {
     MGLT: string;
     cargo_capacity: string;
     consumables: string;

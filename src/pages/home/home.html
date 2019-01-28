@@ -11,10 +11,8 @@
     Categories
   </ion-list-header>
   <ion-list>
-    <ion-item *ngFor="let category of categories" (click)="onCategoryClick(category)">
-      <ion-label>
-        {{category.name}}
-      </ion-label>
-    </ion-item>
+    <button ion-item *ngFor="let category of categories" (click)="onCategoryClick(category)">
+      {{category.name}}
+    </button>
   </ion-list>
 </ion-content>

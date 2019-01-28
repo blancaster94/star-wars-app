@@ -1,4 +1,4 @@
-export class People {
+export interface People {
     birth_year: string;
     created: string;
     edited: string;

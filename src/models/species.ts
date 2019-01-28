@@ -1,4 +1,4 @@
-export class Species {
+export interface Species {
     average_height: string;
     average_lifespan: string;
     classification: string;

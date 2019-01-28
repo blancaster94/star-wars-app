@@ -24,32 +24,36 @@ export class HomePage {
   }
 
   ngOnInit() {
-    const opts: LoadingOptions = {};
-    opts.enableBackdropDismiss = false;
-    opts.content = 'Loading Categories';
-    const loader = this.loadingCtrl.create(opts);
-    loader.present().then(() => {
-      if (this.loaded) {
-        this.loaded = false;
-        loader.dismiss();
-      }
-    });
+    // const opts: LoadingOptions = {};
+    // opts.enableBackdropDismiss = false;
+    // opts.content = 'Loading Categories';
+    // const loader = this.loadingCtrl.create(opts);
+    // loader.present().then(() => {
+    //   if (this.loaded) {
+    //     this.loaded = false;
+    //     loader.dismiss();
+    //   }
+    // });
     this.http.get('https://swapi.co/api/').subscribe((res) => {
       Object.keys(res).forEach((key) => {
         this.categories.push(new Category(key, res[key]));
-        this.loaded = true;
+        // this.loaded = true;
       });
     });
   }
 
   onCategoryClick(category: Category) {
-    this.http.get(category.url).subscribe(
-      (res) => {
-        this.navCtrl.push(
-          'category-page',
-          res
-        )
-      }
-    )
+    const categoryName = category.name.toLowerCase();
+    if (categoryName === 'people') {
+      this.navCtrl.push('people-list', category.url);
+    }
+    // this.http.get(category.url).subscribe(
+    //   (res) => {
+    //     this.navCtrl.push(
+    //       'category-page',
+    //       res
+    //     )
+    //   }
+    // )
   }
 }

@@ -1,0 +1,22 @@
+page-people-list {
+  ion-icon.icon.icon-ios {
+    font-size: 30px;
+    .ion-ios-arrow-back {
+      padding-left: 0;
+      padding-right: 5px;
+    }
+
+  .ion-ios-arrow-forward {
+      padding-left: 5px;
+      padding-right: 0;
+    }
+  }
+
+  span.button-inner {
+    font-size: 17px;
+  }
+
+  .navigation.item.item-block.item-ios {
+    padding-left: 0;
+  }
+}

@@ -1,4 +1,4 @@
-export class Film {
+export interface Film {
     characters: string[];
     created: string;
     director: string;

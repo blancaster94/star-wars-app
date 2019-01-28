@@ -1,0 +1,26 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>PeopleList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-item class="navigation">
+    <button *ngIf="previousUrl" ion-button clear item-start (click)="goToPrevious()">
+      <ion-icon name="ios-arrow-back"></ion-icon>
+      Previous
+    </button>
+    <button *ngIf="nextUrl" ion-button clear item-end (click)="goToNext()">
+      Next
+      <ion-icon name="ios-arrow-forward"></ion-icon>
+    </button>
+  </ion-item>
+  <ion-list>
+    <button ion-item *ngFor="let person of peopleList" (click)="onPersonClick(person)">
+      {{person.name}}
+    </button>
+  </ion-list>
+</ion-content>

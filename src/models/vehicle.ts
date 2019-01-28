@@ -1,4 +1,4 @@
-export class Vehicle {
+export interface Vehicle {
     cargo_capacity: string;
     consumables: string;
     cost_in_credits: string;
