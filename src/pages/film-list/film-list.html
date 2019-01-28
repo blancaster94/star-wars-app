@@ -1,0 +1,16 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>FilmList</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-list>
+    <button ion-item *ngFor="let film of filmList" (click)="goToFilmDetailPage(film)">
+      {{film?.title}}
+    </button>
+  </ion-list>
+</ion-content>

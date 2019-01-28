@@ -1,3 +1,5 @@
+import { Vehicle } from './../../models/vehicle';
+import { DetailPageBase } from './../../base/detail-page';
 import { Planet } from './../../models/planet';
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams } from 'ionic-angular';
@@ -10,34 +12,21 @@ import { HttpClient } from '@angular/common/http';
   selector: 'page-planet-detail',
   templateUrl: 'planet-detail.html',
 })
-export class PlanetDetailPage {
+export class PlanetDetailPage extends DetailPageBase {
 
   private planet: Planet;
 
-  constructor(public navCtrl: NavController, public navParams: NavParams, private http: HttpClient) {
+  constructor(public navCtrl: NavController, public navParams: NavParams, public http: HttpClient) {
+    super(navCtrl, navParams, http);
   }
 
   ngOnInit() {
-    let data = this.navParams.data;
-    if (typeof data === 'object') {
-      this.planet = data;
-    } else {
-      // fetch by url
-      console.log(data);
-
-      this.http.get(data).subscribe(
-        (res) => {
-          console.log(res);
-          this.planet = res as Planet;
-        }
-      )
-    }
+    this.planet = this.getDetail<Planet>();
   }
 
   goToPeopleListPage() {
-    let x = 1;
-    console.log(this.planet.residents);
-    this.navCtrl.push('people-list', this.planet.residents);
+    // this.navCtrl.push('people-list', this.planet.residents);
+    this.pushPage('people-list', this.planet.residents)
   }
 
 }

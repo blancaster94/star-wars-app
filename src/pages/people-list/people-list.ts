@@ -48,20 +48,10 @@ export class PeopleListPage {
   private fetchURLList(urls: string[]): Observable<any[]> {
     let result = [];
     urls.forEach((url) => {
-      result.push(this.fetchURLData(url));
+      result.push(this.http.get(url));
     });
 
     return Observable.forkJoin(result);
-  }
-
-  private fetchURLData(url: string) {
-    return this.http.get(url);
-    // .subscribe(
-    //   (res) => {
-    //     let person: People = res as People;
-    //     this.peopleList.push(person);
-    //   }
-    // )
   }
 
   goToNext() {
@@ -70,10 +60,6 @@ export class PeopleListPage {
         this.previousUrl = res['previous'];
         this.nextUrl = res['next'];
         this.peopleList = res['results'];
-        // res['results'].forEach((result) => {
-        //   this.peopleList = res['results'];
-        //   // this.peopleList.push(new People(result));
-        // })
       }
     )
   }
@@ -84,9 +70,6 @@ export class PeopleListPage {
         this.previousUrl = res['previous'];
         this.nextUrl = res['next'];
         this.peopleList = res['results'];
-        // res['results'].forEach((result) => {
-        //   // this.peopleList.push(new People(result));
-        // })
       }
     )
   }
