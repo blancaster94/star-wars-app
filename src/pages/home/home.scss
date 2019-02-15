@@ -1,3 +1,52 @@
 page-home {
+    
+    .list-ios > .item-block:last-child, .list-ios > .item-wrapper:last-child .item-block {
+        border-bottom: none;
+    }
 
+    ion-content.content-ios {
+        background-color: color($colors, 'sw-theme-L4')
+    }
+
+    ion-header.header.header-ios {
+        box-shadow: 0px 3px 29px 3px color($colors, 'sw-theme-D1');
+    }
+
+    .toolbar-title.toolbar-title-ios {
+        color: color($colors, 'sw-theme-D5');
+        text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+    }
+    
+    .toolbar-background.toolbar-background-ios {
+        background-color: color($colors, 'sw-theme-D5');
+    }
+    
+    button.item-ios {
+        color: color($colors, 'sw-theme-D5');
+        background-color: color($colors, 'sw-theme-L4');
+        .input-wrapper {
+            height: 100px;
+        }
+    }
+
+    button.item-ios.activated {
+        background-color: color($colors, 'sw-theme-L3');
+    }
+    
+    ion-label.label.label-ios {
+        font-size: 50px;
+        text-shadow: -1px -1px 0 yellow, 1px -1px 0 yellow, -1px 1px 0 yellow, 1px 1px 0 yellow;
+    }
+
+    .item-inner {
+        background-size: 20px;
+    }
+
+    .list-ios .item-block .item-inner {
+        border-bottom: 1px solid color($colors, 'sw-theme-D5');
+    }
+
+    ion-icon.icon.icon-ios.ion-ios-arrow-forward.item-icon {
+        color: color($colors, 'sw-theme-D5');
+    }
 }

@@ -1,7 +1,7 @@
 <ion-header>
 
-  <ion-navbar>
-    <ion-title>PeopleList</ion-title>
+  <ion-navbar #navBar>
+    <ion-title>PEOPLE</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -19,8 +19,9 @@
     </button>
   </ion-item>
   <ion-list>
-    <button ion-item *ngFor="let person of peopleList" (click)="onPersonClick(person)">
+    <button ion-item detail-none *ngFor="let person of peopleList" (click)="onPersonClick(person)">
       {{person.name}}
+      <ion-icon item-end name="ios-arrow-forward"></ion-icon>
     </button>
   </ion-list>
 </ion-content>
